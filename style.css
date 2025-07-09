@@ -93,3 +93,87 @@
       color: white;
       border-color: #3b82f6;
     }
+
+/* Animación 5: Wavy effect */
+.card-wavy {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: black;
+  transition: color 0.5s ease;
+}
+
+.card-wavy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background-color: #26ff00;
+  clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0% 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+
+.card-wavy:hover::before {
+  transform: translateX(0%);
+}
+
+.card-wavy:hover {
+  color: white;
+}
+
+.card-wavy > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación 6: Zigzag effect */
+.card-zigzag {
+  position: relative;
+  background-color: #ffffff;
+  color: black;
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
+.card-zigzag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-color: #5774f7;
+  clip-path: polygon(
+    0 30%, 10% 35%, 20% 30%, 30% 35%, 40% 30%,
+    50% 35%, 60% 30%, 70% 35%, 80% 30%, 90% 35%, 100% 30%,
+    100% 100%, 0% 100%
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.card-zigzag:hover::before {
+  left: 0;
+}
+
+.card-zigzag > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-zigzag:hover {
+  color: white;
+}
+
+.card-triangle {
+  position: relative;
+  background: #ffffff;
+  color: black;
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
